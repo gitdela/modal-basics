@@ -11,13 +11,16 @@ body {
 .btn {
   background-color: coral;
   padding: 1em 2em;
-  color: white;
+  color: #333;
   border: 0;
+  font-weight: bold;
   cursor: pointer;
+  transition: ease-in 0.3s;
 }
 
 .btn:hover {
   background-color: #333;
+  color: #ccc;
 }
 
 .modal {
@@ -30,24 +33,65 @@ body {
   width: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+
+  /* totally optional */
+  /* you can name the animation anything */
+
+  animation-name: modal-open;
+  animation-duration: 1s;
 }
 
 .modal-content {
   background-color: #f4f4f4;
   width: 70%;
-  margin: 50% auto;
-  padding: 20px;
+  max-width: 750px;
+  margin: 30% auto;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
 }
 
+.modal-header h3,
+.modal-footer h5 {
+  margin: 0;
+}
+
+.modal-header {
+  background-color: coral;
+  padding: 15px;
+  color: white;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+.modal-footer {
+  background-color: #ccc;
+  padding: 10px 15px;
+  color: #333;
+  text-align: center;
+}
+
 .close-btn {
-  color: #ccc;
+  color: #fff;
   float: right;
-  top: 60%;
+  position: relative;
+  top: -8px;
   font-size: 30px;
   cursor: pointer;
 }
 
 .close-btn:hover {
   color: #000;
+}
+
+/* totally optional */
+/* it's connected to the animation on .modal */
+
+@keyframes modal-open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

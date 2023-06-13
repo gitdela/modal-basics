@@ -25,6 +25,10 @@ function closeModal() {
 
 window.addEventListener('click', outsideClickClose);
 
+// this will target only the space outside the modal
+// although the modal (#basicModal) class contains the modal content
+// magically, a click of the content isn't closing it
+// i'm thinking because it has its own target which is the .modal-content
 function outsideClickClose(e) {
   if (e.target == modal) {
     modal.style.display = 'none';
